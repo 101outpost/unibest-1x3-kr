@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ko"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,1350 +25,505 @@
 
 <!-- SEO -->
 <meta name="description" content="유니베스트투자자문 META 광고 소재 기획안. 28년 경력 투자자문 무료상담 DB 수집 캠페인 12종 크리에이티브 전략.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-
 /* ═══════════════════════════════════════
-   열일곱 브랜드 변수 — 화이트/블랙/그린
+   DESIGN SYSTEM — MZF 스타일 기반
 ═══════════════════════════════════════ */
-:root {
-  /* Core */
-  --white:      #FFFFFF;
-  --off-white:  #F7F8F6;
-  --surface:    #F2F4F1;
-  --border:     #E4E7E0;
-  --border2:    #D0D5CB;
+:root{
+  --g:#22C55E;--gd:rgba(34,197,94,.1);--gg:rgba(34,197,94,.2);
+  --r:#EF4444;--rd:rgba(239,68,68,.08);
+  --bg:#FAFAFA;--bg1:#FFFFFF;--bg2:#F5F5F5;--bg3:#EEEEEE;
+  --gl:rgba(255,255,255,.7);--gb:rgba(0,0,0,.06);--gbh:rgba(0,0,0,.12);
+  --t1:#111111;--t2:#444444;--t3:#888888;--t4:#BBBBBB;
+  --f:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
+  --m:'Space Mono',monospace;
+  --rs:8px;--rm:14px;--rl:20px;
 
-  /* Text */
-  --ink:        #1A1A1A;
-  --ink2:       #3A3A3A;
-  --ink3:       #5A5A5A;
-  --ink4:       #8A8A8A;
-  --ink5:       #BBBBBB;
+  /* Angle accent */
+  --a-pain:#EF4444;--a-pain-bg:rgba(239,68,68,.06);
+  --a-auth:#3B82F6;--a-auth-bg:rgba(59,130,246,.06);
+  --a-free:#22C55E;--a-free-bg:rgba(34,197,94,.06);
+  --a-fomo:#F59E0B;--a-fomo-bg:rgba(245,158,11,.06);
+  --a-soc:#8B5CF6;--a-soc-bg:rgba(139,92,246,.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{background:var(--bg);color:var(--t1);font-family:var(--f);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;top:-30vh;right:-20vw;width:70vw;height:70vh;background:radial-gradient(ellipse,rgba(34,197,94,.04) 0%,transparent 70%);pointer-events:none;z-index:0;filter:blur(80px)}
 
-  /* Green — 열일곱 포인트 */
-  --green:      #2EBD6B;
-  --green-d:    #1E9A53;
-  --green-l:    #E6F7EE;
-  --green-ll:   #F0FBF4;
-  --green-s:    rgba(46,189,107,.12);
+/* ══ NAV ══ */
+.nav{position:sticky;top:0;z-index:1000;background:#111;border-bottom:2px solid var(--g);display:flex;align-items:center;padding:12px max(32px,env(safe-area-inset-left));gap:20px}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-mark{width:32px;height:32px;background:var(--t1);border:1.5px solid var(--g);border-radius:var(--rs);display:flex;align-items:center;justify-content:center}
+.nav-mark svg{width:18px;height:18px}
+.nav-brand{font-weight:700;font-size:15px;color:#fff;letter-spacing:-.5px}
+.nav-brand span{color:var(--g)}
+.nav-ver{font-family:var(--m);font-size:10px;color:var(--t3);letter-spacing:1px;margin-left:auto;flex-shrink:0}
 
-  /* Angle accent colors (light-mode) */
-  --red-bg:     #FFF2F2;
-  --red-bd:     #FFCCCC;
-  --red-text:   #CC2200;
-  --red-bar:    #FF4422;
+/* ══ SECTION NAV (sticky bar) ══ */
+.snav{position:sticky;top:52px;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--gb);display:flex;align-items:center;justify-content:center;gap:2px;padding:8px 20px}
+.snav a{font-family:var(--m);font-size:11px;letter-spacing:1.5px;color:var(--t4);text-decoration:none;padding:6px 14px;border-radius:100px;transition:all .2s;font-weight:400}
+.snav a:visited{color:var(--t4)}
+.snav a:hover{background:var(--gd);color:var(--g)}
+.snav a.active{background:var(--g);color:#fff;font-weight:700}
 
-  --blue-bg:    #F0F4FF;
-  --blue-bd:    #C5D0FF;
-  --blue-text:  #1A3ACC;
-  --blue-bar:   #3355EE;
+/* ══ HERO ══ */
+.hero{position:relative;z-index:1;padding:72px 48px 56px;max-width:900px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--m);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g);background:var(--gd);padding:7px 18px;border-radius:100px;margin-bottom:28px}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--g);animation:blink 2.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}55%{opacity:.2}}
+.hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;letter-spacing:-1.5px;line-height:1.15;color:var(--t1);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--g)}
+.hero-desc{font-size:15px;color:var(--t3);line-height:1.7;max-width:600px}
+.hero-desc strong{color:var(--t1)}
 
-  --orange-bg:  #FFF6EC;
-  --orange-bd:  #FFD8A8;
-  --orange-text:#B35500;
-  --orange-bar: #FF8800;
+/* KPI Strip */
+.kpi-strip{display:inline-flex;background:var(--gl);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border:1px solid var(--gb);border-radius:var(--rl);overflow:hidden;margin-top:40px}
+.kpi{padding:20px 32px;border-right:1px solid var(--gb);display:flex;flex-direction:column;gap:4px}
+.kpi:last-child{border-right:none}
+.kpi-num{font-size:28px;font-weight:800;letter-spacing:-1px;color:var(--t1)}
+.kpi-num span{color:var(--g)}
+.kpi-lbl{font-family:var(--m);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--t4)}
+.kpi:hover{background:var(--gd);transition:background .2s}
 
-  --purple-bg:  #F6F2FF;
-  --purple-bd:  #D5C5FF;
-  --purple-text:#5522BB;
-  --purple-bar: #7744EE;
+/* ══ SECTION ══ */
+.sec{position:relative;z-index:1;padding:64px 48px 0;max-width:900px;margin:0 auto}
+.sec-num{font-family:var(--m);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--g);font-weight:700;margin-bottom:8px}
+.sec-ttl{font-size:clamp(24px,3vw,36px);font-weight:800;letter-spacing:-1px;color:var(--t1);line-height:1.15;margin-bottom:8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sec-badge{font-family:var(--m);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;background:var(--gd);color:var(--g);border-radius:100px;font-weight:700}
+.sec-div{width:100%;height:1px;background:linear-gradient(90deg,var(--g),transparent);margin:16px 0 40px}
 
-  --font-body: 'Noto Sans KR', sans-serif;
-  --font-mono: 'Space Mono', monospace;
-}
+/* ══ PRINCIPLE GRID ══ */
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pcard{background:var(--bg1);border:1px solid var(--gb);border-radius:var(--rm);padding:24px;transition:border-color .2s}
+.pcard:hover{border-color:var(--g)}
+.pcard-num{font-family:var(--m);font-size:10px;letter-spacing:2px;color:var(--g);margin-bottom:10px}
+.pcard-name{font-size:16px;font-weight:700;color:var(--t1);margin-bottom:4px}
+.pcard-en{font-family:var(--m);font-size:10px;color:var(--t4);letter-spacing:1px;margin-bottom:12px}
+.pcard-desc{font-size:13px;color:var(--t3);line-height:1.6}
+.pcard-tag{display:inline-block;font-family:var(--m);font-size:10px;color:var(--g);background:var(--gd);padding:3px 10px;border-radius:100px;margin-top:12px}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* ══ TARGET GRID ══ */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tcard{background:var(--bg1);border:1px solid var(--gb);border-radius:var(--rm);padding:28px;transition:border-color .2s}
+.tcard:hover{border-color:var(--g)}
+.tcard-seg{font-family:var(--m);font-size:10px;letter-spacing:2px;color:var(--g);margin-bottom:6px}
+.tcard-name{font-size:16px;font-weight:700;color:var(--t1);margin-bottom:14px}
+.tcard ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.tcard li{font-size:13px;color:var(--t3);line-height:1.5;padding-left:16px;position:relative}
+.tcard li::before{content:'·';position:absolute;left:0;color:var(--g);font-weight:900}
 
-body {
-  background: var(--white);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 14px;
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-}
+/* ══ ANGLE TABLE ══ */
+.angle-tbl{width:100%;border-collapse:collapse;font-size:14px}
+.angle-tbl th{font-family:var(--m);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--t4);text-align:left;padding:10px 16px;border-bottom:2px solid var(--g)}
+.angle-tbl td{padding:14px 16px;border-bottom:1px solid var(--gb);vertical-align:top;color:var(--t2)}
+.angle-tbl tr:hover td{background:var(--gd);transition:background .15s}
+.a-no{font-family:var(--m);font-weight:700;color:var(--g);font-size:13px}
+.a-name{font-weight:700;color:var(--t1)}
 
-/* ══════════════════════════════════════
-   NAV
-══════════════════════════════════════ */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--white);
-  border-bottom: 1.5px solid var(--border);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
-  height: 58px;
-}
-.nav-left { display: flex; align-items: center; gap: 14px; }
-.nav-logo-wrap {
-  display: flex; align-items: center; gap: 8px;
-}
-.nav-logo-mark {
-  width: 28px; height: 28px;
-  background: var(--ink);
-  border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-.nav-logo-mark svg { width: 18px; height: 18px; }
-.nav-brand-text {
-  font-size: 15px; font-weight: 900;
-  color: var(--ink); letter-spacing: -.3px;
-  line-height: 1;
-}
-.nav-brand-text span { color: var(--green); }
-.nav-pipe { width: 1px; height: 18px; background: var(--border2); }
-.nav-subtitle {
-  font-size: 12px; color: var(--ink4);
-  font-weight: 400; letter-spacing: .2px;
-}
-.nav-right {
-  display: flex; align-items: center; gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 10px; color: var(--ink4);
-  letter-spacing: 1px; text-transform: uppercase;
-}
-.nav-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--green);
-  animation: blink 2.2s ease-in-out infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 55%{opacity:.25} }
+/* ══ FILTER BAR ══ */
+.fbar{display:flex;align-items:center;gap:8px;overflow-x:auto;scrollbar-width:none;padding:16px 0;margin-bottom:24px;border-bottom:1px solid var(--gb)}
+.fbar::-webkit-scrollbar{display:none}
+.fbar-lbl{font-family:var(--m);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--t4);margin-right:8px;flex-shrink:0}
+.fb{font-family:var(--f);font-size:14px;padding:7px 18px;border-radius:100px;border:1px solid var(--gb);background:var(--bg1);color:var(--t3);cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0}
+.fb:hover{border-color:var(--gbh);color:var(--t1)}
+.fb.on{background:var(--t1);color:#fff;border-color:var(--t1)}
+.fbar-cnt{margin-left:auto;flex-shrink:0;font-family:var(--m);font-size:12px;color:var(--t4)}
 
-/* ══════════════════════════════════════
-   HERO
-══════════════════════════════════════ */
-.hero {
-  padding: 80px 48px 72px;
-  border-bottom: 1.5px solid var(--border);
-  position: relative;
-  overflow: hidden;
-}
-.hero::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0;
-  width: 100%; height: 3px;
-  background: linear-gradient(90deg, var(--green) 0%, transparent 60%);
-}
-.hero-inner {
-  max-width: 880px;
-}
-.hero-badge {
-  display: inline-flex; align-items: center; gap: 7px;
-  background: var(--green-l);
-  border: 1px solid var(--green);
-  border-radius: 3px;
-  padding: 4px 12px;
-  font-family: var(--font-mono);
-  font-size: 10px; color: var(--green-d);
-  letter-spacing: 1.5px; text-transform: uppercase;
-  margin-bottom: 28px;
-}
-.hero-badge::before {
-  content: ''; width: 6px; height: 6px;
-  border-radius: 50%; background: var(--green);
-  flex-shrink: 0;
-}
-.hero-title {
-  font-size: clamp(36px, 5.5vw, 64px);
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: -1.5px;
-  color: var(--ink);
-  margin-bottom: 20px;
-}
-.hero-title em {
-  font-style: normal;
-  color: var(--green);
-}
-.hero-desc {
-  font-size: 15px; color: var(--ink3);
-  line-height: 1.85; max-width: 540px;
-  margin-bottom: 48px;
-  font-weight: 400;
-}
-.hero-kpis {
-  display: flex; gap: 0;
-  border: 1.5px solid var(--border);
-  border-radius: 6px;
-  overflow: hidden;
-  width: fit-content;
-}
-.kpi-item {
-  padding: 16px 32px;
-  display: flex; flex-direction: column; gap: 3px;
-  border-right: 1.5px solid var(--border);
-  background: var(--off-white);
-  transition: background .2s;
-}
-.kpi-item:last-child { border-right: none; }
-.kpi-item:hover { background: var(--green-ll); }
-.kpi-num {
-  font-size: 28px; font-weight: 900;
-  color: var(--ink); line-height: 1;
-  letter-spacing: -1px;
-}
-.kpi-num span { color: var(--green); }
-.kpi-label {
-  font-family: var(--font-mono);
-  font-size: 10px; color: var(--ink4);
-  letter-spacing: 1px; text-transform: uppercase;
-}
+/* ══ CREATIVE CARD ══ */
+.cgrid{display:flex;flex-direction:column;gap:20px}
+.cc{background:var(--bg1);border:1px solid var(--gb);border-radius:var(--rm);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.cc:hover{border-color:var(--gbh);box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.cc-ac{height:4px}
+.cc-ac.p{background:var(--g)}
+.cc-ac.a{background:var(--r)}
+.cc-bd{padding:28px 32px 20px}
+.cc-mt{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.cc-no{font-family:var(--m);font-size:13px;font-weight:700;color:var(--g);background:var(--gd);width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:var(--rs)}
+.cc-no.a{color:var(--r);background:var(--rd)}
+.cc-ag{font-size:13px;font-weight:600;padding:4px 12px;border-radius:100px}
+.cc-ag.p{color:var(--g);background:var(--gd)}
+.cc-ag.a{color:var(--r);background:var(--rd)}
+.cc-fm{font-family:var(--m);font-size:11px;color:var(--t4);letter-spacing:.5px}
+.cc-tp{font-size:12px;font-weight:600;padding:3px 10px;border-radius:100px}
+.cc-tp.p{color:var(--g);background:var(--gd)}
+.cc-tp.a{color:var(--r);background:var(--rd)}
 
-/* ══════════════════════════════════════
-   SECTION
-══════════════════════════════════════ */
-.section {
-  padding: 64px 48px;
-  border-bottom: 1.5px solid var(--border);
-}
-.section-head {
-  display: flex; align-items: center; gap: 14px;
-  margin-bottom: 40px;
-}
-.section-num {
-  font-family: var(--font-mono);
-  font-size: 11px; color: var(--green);
-  letter-spacing: 2px; font-weight: 700;
-}
-.section-title {
-  font-size: 22px; font-weight: 900;
-  color: var(--ink); letter-spacing: -.5px;
-}
-.section-line {
-  flex: 1; height: 1.5px; background: var(--border);
+.cc-hl{font-size:22px;font-weight:800;letter-spacing:-.5px;line-height:1.3;color:var(--t1);margin-bottom:20px}
+.cc-hl em{font-style:normal;color:var(--g)}
+.cc-hl.a{color:var(--t1)}
+.cc-hl.a em{color:var(--r)}
+
+.cc-bk{margin-bottom:16px}
+.cc-lb{font-family:var(--m);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--t4);margin-bottom:6px}
+.cc-tx{font-size:14px;color:var(--t2);line-height:1.7}
+.cc-sc{list-style:none;display:flex;flex-direction:column;gap:6px}
+.cc-sc li{font-size:13px;color:var(--t2);line-height:1.5;padding-left:28px;position:relative}
+.cc-sc li::before{content:attr(data-n);position:absolute;left:0;font-family:var(--m);font-size:10px;color:var(--g);font-weight:700}
+
+.cc-ti{padding:12px 32px;background:var(--bg2);font-size:13px;color:var(--t3);line-height:1.6;border-top:1px solid var(--gb)}
+.cc-ti.a{background:var(--rd)}
+
+.cc-ft{display:flex;justify-content:space-between;align-items:center;padding:14px 32px;border-top:1px solid var(--gb)}
+.cc-ct{font-size:14px;font-weight:700;color:var(--g)}
+.cc-ct.a{color:var(--r)}
+.cc-tg{font-size:12px;color:var(--t4)}
+
+/* ══ PHASE 1 ══ */
+.ph-nt{font-size:13px;color:var(--t3);margin-bottom:24px}
+.ph-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ph-cd{background:var(--bg1);border:1px solid var(--gb);border-radius:var(--rm);padding:24px;display:flex;gap:16px;transition:border-color .2s}
+.ph-cd:hover{border-color:var(--g)}
+.ph-nm{font-family:var(--m);font-size:16px;font-weight:700;color:var(--g);flex-shrink:0}
+.ph-nm.a{color:var(--r)}
+.ph-ag{font-size:12px;color:var(--t3);margin-bottom:4px}
+.ph-hk{font-size:14px;font-weight:600;color:var(--t1);line-height:1.4;margin-bottom:8px}
+.ph-st{font-family:var(--m);font-size:11px;color:var(--g);letter-spacing:.5px}
+.ph-st.a{color:var(--r)}
+
+/* ══ LESSON & NEXT ══ */
+.ls-box{background:var(--gl);backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);border:1px solid var(--gb);border-left:4px solid var(--g);border-radius:var(--rm);padding:36px 40px;margin-bottom:32px}
+.ls-lb{font-family:var(--m);font-size:11px;letter-spacing:2px;color:var(--t4);margin-bottom:12px}
+.ls-tx{font-size:14px;color:var(--t2);line-height:1.8}
+.ls-tx strong{color:var(--t1)}
+.ls-tx em{font-style:normal;color:var(--g)}
+
+.nx-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:64px}
+.nx-cd{display:flex;gap:14px;padding:20px;background:var(--bg1);border:1px solid var(--gb);border-radius:var(--rm);transition:border-color .2s}
+.nx-cd:hover{border-color:var(--g)}
+.nx-i{font-family:var(--m);font-size:14px;font-weight:700;color:var(--g);flex-shrink:0}
+.nx-t{font-size:14px;font-weight:700;color:var(--t1);margin-bottom:4px}
+.nx-d{font-size:13px;color:var(--t3);line-height:1.5}
+
+/* ══ FOOTER ══ */
+footer{padding:32px 48px;border-top:2px solid var(--g);display:flex;justify-content:space-between;align-items:center;max-width:900px;margin:0 auto}
+.ft-brand{font-weight:700;font-size:15px;color:var(--t1)}
+.ft-brand span{color:var(--g)}
+.ft-tag{font-size:11px;color:var(--t4);margin-top:4px}
+.ft-info{font-size:11px;color:var(--t4);text-align:right;line-height:1.6}
+
+/* ══ FADE-IN ══ */
+.fi{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.fi.in{opacity:1;transform:translateY(0)}
+
+/* ══ RESPONSIVE 960px ══ */
+@media(max-width:960px){
+  .nav{padding:12px 20px}
+  .hero{padding:48px 24px 40px}
+  .sec{padding:40px 24px 0}
+  .pgrid,.tgrid{grid-template-columns:1fr}
+  .ph-grid,.nx-grid{grid-template-columns:1fr}
+  .kpi-strip{flex-direction:column;width:100%}
+  .kpi{border-right:none;border-bottom:1px solid var(--gb)}
+  .kpi:last-child{border-bottom:none}
+  .fbar{padding:12px 0;gap:6px}
+  footer{padding:24px;flex-direction:column;align-items:flex-start;gap:12px}
+  .ft-info{text-align:left}
+  .snav{top:50px;padding:6px 16px;gap:0}
+  .snav a{padding:6px 10px;font-size:10px}
 }
 
-/* ══════════════════════════════════════
-   PRINCIPLE GRID
-══════════════════════════════════════ */
-.principle-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-.principle-card {
-  background: var(--off-white);
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
-  padding: 24px 22px;
-  transition: border-color .2s, background .2s;
-}
-.principle-card:hover {
-  border-color: var(--green);
-  background: var(--green-ll);
-}
-.pc-label {
-  display: inline-block;
-  background: var(--green);
-  color: var(--white);
-  font-size: 11px; font-weight: 700;
-  letter-spacing: .5px;
-  border-radius: 3px;
-  padding: 2px 8px;
-  margin-bottom: 12px;
-}
-.pc-name {
-  font-size: 15px; font-weight: 700;
-  color: var(--ink); margin-bottom: 7px;
-}
-.pc-desc {
-  font-size: 13px; color: var(--ink3); line-height: 1.75;
+/* ══ RESPONSIVE 480px ══ */
+@media(max-width:480px){
+  .nav{padding:10px 14px;gap:12px}
+  .nav-ver{display:none}
+  .hero{padding:36px 16px 28px}
+  .hero h1{font-size:24px}
+  .sec{padding:32px 16px 0}
+  .sec-ttl{font-size:20px}
+  .cc-bd{padding:20px 18px 14px}
+  .cc-hl{font-size:18px}
+  .cc-ft{flex-direction:column;align-items:flex-start;gap:6px;padding:12px 18px}
+  .cc-ti{padding:10px 18px;font-size:12px}
+  .snav{top:46px;padding:4px 12px}
+  .snav a{padding:5px 8px;font-size:9px;letter-spacing:1px}
+  .fbar{gap:4px}
+  .fb{font-size:13px;padding:6px 14px}
+  .ls-box{padding:24px 20px}
+  footer{padding:20px 16px}
+  .angle-tbl{font-size:12px}
+  .angle-tbl th,.angle-tbl td{padding:10px 8px}
 }
 
-/* ══════════════════════════════════════
-   TARGET GRID
-══════════════════════════════════════ */
-.target-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+/* ══ PRINT ══ */
+@media print{
+  .nav,.snav,.fbar{display:none}
+  .fi{opacity:1!important;transform:none!important}
+  body{font-size:11px;background:#fff}
+  .hero{padding:20px;break-after:page}
+  .sec{break-inside:avoid;padding:16px}
 }
-.target-card {
-  background: var(--off-white);
-  border: 1.5px solid var(--border);
-  border-radius: 8px; padding: 24px 22px;
-  transition: border-color .2s;
-}
-.target-card:hover { border-color: var(--green); }
-.tc-eyebrow {
-  font-family: var(--font-mono);
-  font-size: 10px; color: var(--green);
-  letter-spacing: 1.5px; text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.tc-title {
-  font-size: 15px; font-weight: 700;
-  color: var(--ink); margin-bottom: 14px;
-}
-.tc-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
-.tc-list li {
-  font-size: 13px; color: var(--ink3);
-  padding-left: 16px; position: relative;
-}
-.tc-list li::before {
-  content: ''; position: absolute; left: 4px; top: 9px;
-  width: 5px; height: 5px; border-radius: 50%;
-  background: var(--green);
-}
-
-/* ══════════════════════════════════════
-   ANGLE TABLE
-══════════════════════════════════════ */
-.angle-table {
-  border: 1.5px solid var(--border);
-  border-radius: 8px; overflow: hidden;
-}
-.angle-row {
-  display: grid;
-  grid-template-columns: 48px 148px 1fr 210px;
-  border-bottom: 1px solid var(--border);
-  transition: background .15s;
-}
-.angle-row:last-child { border-bottom: none; }
-.angle-row:hover:not(.angle-head) { background: var(--off-white); }
-.angle-head { background: var(--surface); }
-.angle-cell {
-  padding: 14px 18px;
-  display: flex; align-items: center;
-  border-right: 1px solid var(--border);
-  font-size: 13px;
-}
-.angle-cell:last-child { border-right: none; }
-.angle-head .angle-cell {
-  font-family: var(--font-mono);
-  font-size: 10px; color: var(--ink4);
-  letter-spacing: 1.5px; text-transform: uppercase;
-  font-weight: 700;
-}
-.angle-idx {
-  font-family: var(--font-mono);
-  font-weight: 700; color: var(--ink5); font-size: 12px;
-}
-.angle-msg { color: var(--ink2); line-height: 1.6; }
-.angle-tgt { color: var(--ink4); font-size: 12px; line-height: 1.5; }
-
-/* Angle tags */
-.tag {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 10px; font-weight: 700; letter-spacing: .8px;
-  padding: 3px 9px; border-radius: 3px;
-  text-transform: uppercase; white-space: nowrap;
-}
-.tag-pain   { background: var(--red-bg);    color: var(--red-text);    border: 1px solid var(--red-bd); }
-.tag-auth   { background: var(--blue-bg);   color: var(--blue-text);   border: 1px solid var(--blue-bd); }
-.tag-free   { background: var(--green-l);   color: var(--green-d);     border: 1px solid var(--green); }
-.tag-fomo   { background: var(--orange-bg); color: var(--orange-text); border: 1px solid var(--orange-bd); }
-.tag-social { background: var(--purple-bg); color: var(--purple-text); border: 1px solid var(--purple-bd); }
-
-/* ══════════════════════════════════════
-   AD CARDS GRID
-══════════════════════════════════════ */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-}
-
-.ad-card {
-  border: 1.5px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--white);
-  display: flex; flex-direction: column;
-  transition: box-shadow .2s, border-color .2s;
-  position: relative;
-}
-.ad-card:hover {
-  box-shadow: 0 4px 24px rgba(0,0,0,.07);
-  border-color: var(--border2);
-}
-/* top accent bar */
-.ad-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 3px;
-  background: var(--bar-color, var(--green));
-}
-
-/* card header */
-.card-head {
-  display: flex; align-items: center; gap: 14px;
-  padding: 20px 22px 16px;
-  border-bottom: 1px solid var(--border);
-  background: var(--off-white);
-}
-.card-num {
-  font-size: 38px; font-weight: 900;
-  color: var(--border2); line-height: 1;
-  min-width: 50px; letter-spacing: -2px;
-  user-select: none;
-}
-.card-meta { display: flex; flex-direction: column; gap: 6px; }
-.card-format {
-  font-family: var(--font-mono);
-  font-size: 10px; color: var(--ink4);
-  letter-spacing: .8px; text-transform: uppercase;
-}
-
-/* card body */
-.card-body {
-  padding: 22px 22px 0;
-  flex: 1; display: flex; flex-direction: column; gap: 16px;
-}
-.copy-block { display: flex; flex-direction: column; gap: 5px; }
-.copy-lbl {
-  font-family: var(--font-mono);
-  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--ink5);
-}
-.copy-hl {
-  font-size: 17px; font-weight: 900;
-  color: var(--ink); line-height: 1.45; letter-spacing: -.3px;
-}
-/* 공격적(도발) 헤드라인 강조 */
-.copy-hl.attack { color: var(--red-text); }
-.copy-sub {
-  font-size: 13px; font-weight: 700;
-  color: var(--ink2); line-height: 1.65;
-}
-.copy-body-txt {
-  font-size: 12.5px; color: var(--ink3);
-  line-height: 1.85;
-}
-.copy-divider { height: 1px; background: var(--border); }
-
-/* card footer */
-.card-foot {
-  display: grid; grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--border);
-  margin-top: 16px;
-}
-.foot-col {
-  padding: 13px 18px;
-  display: flex; flex-direction: column; gap: 4px;
-}
-.foot-col:first-child { border-right: 1px solid var(--border); }
-.foot-lbl {
-  font-family: var(--font-mono);
-  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink5);
-}
-.foot-cta {
-  font-size: 13px; font-weight: 700; color: var(--green-d);
-}
-.foot-tgt { font-size: 12px; color: var(--ink4); line-height: 1.5; }
-
-/* note bar */
-.card-note {
-  padding: 10px 18px;
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  font-size: 11px; color: var(--ink4); line-height: 1.6;
-}
-.card-note strong { color: var(--green-d); }
-
-/* ══════════════════════════════════════
-   PRIORITY TABLE
-══════════════════════════════════════ */
-.priority-table {
-  border: 1.5px solid var(--border);
-  border-radius: 8px; overflow: hidden;
-}
-.p-row {
-  display: grid;
-  grid-template-columns: 56px 140px 1fr 200px;
-  border-bottom: 1px solid var(--border);
-}
-.p-row:last-child { border-bottom: none; }
-.p-row:hover:not(.p-head) { background: var(--off-white); }
-.p-head { background: var(--surface); }
-.p-cell {
-  padding: 14px 18px;
-  border-right: 1px solid var(--border);
-  display: flex; align-items: center; font-size: 13px;
-}
-.p-cell:last-child { border-right: none; }
-.p-head .p-cell {
-  font-family: var(--font-mono);
-  font-size: 10px; color: var(--ink4);
-  letter-spacing: 1.5px; text-transform: uppercase;
-}
-.p-num { font-size: 22px; font-weight: 900; color: var(--green); line-height: 1; }
-.p-hook { color: var(--ink2); font-style: italic; line-height: 1.65; }
-.p-str { color: var(--ink4); font-size: 12px; }
-
-/* ══════════════════════════════════════
-   LESSON & STEPS
-══════════════════════════════════════ */
-.lesson-box {
-  background: var(--green-ll);
-  border: 1.5px solid var(--green);
-  border-left: 4px solid var(--green);
-  border-radius: 6px;
-  padding: 28px 32px;
-  margin-bottom: 40px;
-}
-.lesson-lbl {
-  font-family: var(--font-mono);
-  font-size: 10px; letter-spacing: 2px; color: var(--green-d);
-  text-transform: uppercase; margin-bottom: 10px;
-}
-.lesson-txt {
-  font-size: 14px; color: var(--ink2); line-height: 1.9;
-}
-.lesson-txt strong { color: var(--ink); }
-
-.steps-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
-}
-.step-card {
-  border: 1.5px solid var(--border);
-  border-radius: 8px; padding: 22px 24px;
-  display: flex; gap: 16px;
-  transition: border-color .2s, background .2s;
-}
-.step-card:hover { border-color: var(--green); background: var(--green-ll); }
-.step-n {
-  font-size: 28px; font-weight: 900;
-  color: var(--green); line-height: 1; min-width: 28px;
-}
-.step-content { display: flex; flex-direction: column; gap: 5px; }
-.step-title { font-size: 14px; font-weight: 700; color: var(--ink); }
-.step-desc { font-size: 12.5px; color: var(--ink3); line-height: 1.75; }
-
-/* ══════════════════════════════════════
-   FOOTER
-══════════════════════════════════════ */
-footer {
-  background: var(--ink);
-  padding: 36px 48px;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 16px;
-}
-.footer-brand {
-  display: flex; flex-direction: column; gap: 4px;
-}
-.footer-name {
-  font-size: 18px; font-weight: 900;
-  color: var(--white); letter-spacing: -.3px;
-}
-.footer-name span { color: var(--green); }
-.footer-tagline {
-  font-family: var(--font-mono);
-  font-size: 10px; color: #666; letter-spacing: 1px;
-}
-.footer-info {
-  font-family: var(--font-mono);
-  font-size: 10px; color: #555;
-  text-align: right; line-height: 1.9; letter-spacing: .5px;
-}
-
-/* ══════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════ */
-@media (max-width: 860px) {
-  nav, .hero, .section { padding-left: 20px; padding-right: 20px; }
-  .hero { padding-top: 48px; padding-bottom: 48px; }
-  .hero-kpis { flex-direction: column; width: 100%; }
-  .kpi-item { border-right: none; border-bottom: 1.5px solid var(--border); }
-  .kpi-item:last-child { border-bottom: none; }
-  .principle-grid, .target-grid, .steps-grid { grid-template-columns: 1fr; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .angle-row { grid-template-columns: 40px 130px 1fr; }
-  .angle-row .angle-cell:last-child { display: none; }
-  .p-row { grid-template-columns: 48px 120px 1fr; }
-  .p-row .p-cell:last-child { display: none; }
-  footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
-  .footer-info { text-align: left; }
-}
-
-/* ══════════════════════════════════════
-   FADE-IN
-══════════════════════════════════════ */
-.fade-up {
-  opacity: 0; transform: translateY(18px);
-  transition: opacity .55s ease, transform .55s ease;
-}
-.fade-up.in { opacity: 1; transform: translateY(0); }
-
-</style>
-<style id="grabbit-visited-styles">
-        .grabbit-visited,
-        .grabbit-visited:link,
-        .grabbit-visited:visited {
-            color: #551A8B !important; /* Standard visited link purple */
-        }
-    </style></head>
+</style></head>
 <body>
 
-<!-- ── NAV ── -->
-<nav>
-  <div class="nav-left">
-    <div class="nav-logo-wrap">
-      <div class="nav-logo-mark">
-        <!-- 열일곱 로고 심볼 SVG 추상화 -->
-        <svg viewBox="0 0 18 18" fill="none">
-          <rect x="2" y="1" width="4.5" height="16" rx="1" fill="white"></rect>
-          <rect x="11.5" y="1" width="4.5" height="16" rx="1" fill="white"></rect>
-          <path d="M6.5 6 L14 10.5 L10 12 L6.5 14" stroke="#2EBD6B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-        </svg>
-      </div>
-      <div class="nav-brand-text">열일<span>곱</span>하기</div>
+<!-- ══ NAV ══ -->
+<nav class="nav" role="navigation" aria-label="메인 네비게이션">
+  <div class="nav-logo">
+    <div class="nav-mark">
+      <svg viewBox="0 0 18 18" fill="none">
+        <rect x="2" y="1" width="4.5" height="16" rx="1" fill="white"/>
+        <rect x="11.5" y="1" width="4.5" height="16" rx="1" fill="white"/>
+        <path d="M6.5 6 L14 10.5 L10 12 L6.5 14" stroke="#22C55E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
     </div>
-    <div class="nav-pipe"></div>
-    <div class="nav-subtitle">광고 소재 기획안</div>
+    <div class="nav-brand">열일<span>곱</span>하기</div>
   </div>
-  <div class="nav-right">
-    <div class="nav-dot"></div>
-    META CAMPAIGN BRIEF v2.0
-  </div>
+  <div class="nav-ver">유니베스트투자자문 × META CAMPAIGN BRIEF v2.0</div>
 </nav>
 
-<!-- ── HERO ── -->
-<section class="hero fade-up in">
-  <div class="hero-inner">
-    <div class="hero-badge">CAMPAIGN BRIEF · 2026.03</div>
-    <h1 class="hero-title">
-      유니베스트투자자문<br>
-      <em>META DB 수집 캠페인</em><br>
-      광고 소재 기획안
-    </h1>
-    <p class="hero-desc">
-      투자자문 무료상담 신청자 DB 수집 목적의 META 광고 소재 기획안입니다.<br>
-      열일곱 카피 원칙을 적용한 <strong>12종 베리에이션</strong>으로 구성됩니다.
-    </p>
-    <div class="hero-kpis">
-      <div class="kpi-item">
-        <div class="kpi-num">12<span>종</span></div>
-        <div class="kpi-label">TOTAL CREATIVES</div>
-      </div>
-      <div class="kpi-item">
-        <div class="kpi-num">5<span>개</span></div>
-        <div class="kpi-label">PERSUASION ANGLES</div>
-      </div>
-      <div class="kpi-item">
-        <div class="kpi-num">4<span>개</span></div>
-        <div class="kpi-label">AD FORMATS</div>
-      </div>
-      <div class="kpi-item">
-        <div class="kpi-num">KPI</div>
-        <div class="kpi-label">LEAD MAXIMIZATION</div>
-      </div>
-    </div>
+<!-- ══ SECTION NAV ══ -->
+<div class="snav" role="navigation" aria-label="섹션 바로가기">
+  <a href="#s01">01</a>
+  <a href="#s02">02</a>
+  <a href="#s03">03</a>
+  <a href="#s04">04</a>
+  <a href="#s05">05</a>
+  <a href="#s06">06</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<main role="main">
+<section class="hero fi" aria-label="캠페인 개요">
+  <div class="hero-badge">Campaign Brief · 2026.03</div>
+  <h1>유니베스트투자자문<br><em>META DB 수집 캠페인</em><br>광고 소재 기획안</h1>
+  <div class="hero-desc">
+    투자자문 무료상담 신청자 DB 수집 목적의 META 광고 소재 기획안입니다.<br>
+    열일곱 카피 원칙을 적용한 <strong>12종 베리에이션</strong>으로 구성됩니다.
+  </div>
+  <div class="kpi-strip">
+    <div class="kpi"><div class="kpi-num">12<span>종</span></div><div class="kpi-lbl">Total Creatives</div></div>
+    <div class="kpi"><div class="kpi-num">5<span>개</span></div><div class="kpi-lbl">Persuasion Angles</div></div>
+    <div class="kpi"><div class="kpi-num">4<span>개</span></div><div class="kpi-lbl">Ad Formats</div></div>
+    <div class="kpi"><div class="kpi-num">KPI</div><div class="kpi-lbl">Lead Maximization</div></div>
   </div>
 </section>
 
-<!-- ── 01 카피 원칙 ── -->
-<section class="section fade-up in">
-  <div class="section-head">
-    <span class="section-num">01</span>
-    <h2 class="section-title">카피 원칙 — 열일곱 스타일</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="principle-grid">
-    <div class="principle-card">
-      <div class="pc-label">직구 도발</div>
-      <div class="pc-name">불편한 진실, 정면 돌파</div>
-      <div class="pc-desc">3종에만 적용. 독자가 움찔할 만큼 날카롭게 던진다. 나머지는 긍정 방향으로 전환.</div>
-    </div>
-    <div class="principle-card">
-      <div class="pc-label">단문 끊어치기</div>
-      <div class="pc-name">리듬감이 스크롤을 멈춘다</div>
-      <div class="pc-desc">긴 문장 1개보다 짧은 문장 3개. 읽히는 광고가 팔리는 광고.</div>
-    </div>
-    <div class="principle-card">
-      <div class="pc-label">숫자 충격</div>
-      <div class="pc-name">추상 표현 금지</div>
-      <div class="pc-desc">'많은 경험'이 아니라 '28년', '10명 중 7명'. 구체적 수치가 신뢰를 만든다.</div>
-    </div>
-    <div class="principle-card">
-      <div class="pc-label">당신 지목</div>
-      <div class="pc-name">내 얘기처럼 느끼게</div>
-      <div class="pc-desc">'투자자들은' 대신 '당신은'. 직접 지목이 관여도를 3배 높인다.</div>
-    </div>
-    <div class="principle-card">
-      <div class="pc-label">반전 구조</div>
-      <div class="pc-name">공감 → 충격 → 희망</div>
-      <div class="pc-desc">문제 공감으로 시작해 해결책으로 마무리. 긍정 소재는 가능성 → 전문가 → 무료 순으로.</div>
-    </div>
-    <div class="principle-card">
-      <div class="pc-label">구어체</div>
-      <div class="pc-name">말하듯 쓴다</div>
-      <div class="pc-desc">'~드립니다' 보다 '~해드릴게요'. 가깝고 친근한 전문가 느낌.</div>
-    </div>
-  </div>
+<!-- ═══════════════════════════
+     01 카피 원칙
+═══════════════════════════ -->
+<section class="sec fi" id="s01" role="region" aria-label="카피 원칙">
+<div class="sec-num">01</div>
+<div class="sec-ttl">카피 원칙 — 열일곱 스타일 <span class="sec-badge">6 Principles</span></div>
+<div class="sec-div"></div>
+<div class="pgrid">
+  <div class="pcard"><div class="pcard-num">P.01</div><div class="pcard-name">직구 도발</div><div class="pcard-en">Direct Attack</div><div class="pcard-desc">불편한 진실, 정면 돌파. 독자가 움찔할 만큼 날카롭게 던진다. 나머지는 긍정 방향으로 전환.</div><div class="pcard-tag">3종에만 적용</div></div>
+  <div class="pcard"><div class="pcard-num">P.02</div><div class="pcard-name">단문 끊어치기</div><div class="pcard-en">Short Punch</div><div class="pcard-desc">긴 문장 1개보다 짧은 문장 3개. 리듬감이 스크롤을 멈춘다. 읽히는 광고가 팔리는 광고.</div><div class="pcard-tag">전 소재 적용</div></div>
+  <div class="pcard"><div class="pcard-num">P.03</div><div class="pcard-name">숫자 충격</div><div class="pcard-en">Number First</div><div class="pcard-desc">추상 표현 금지. '많은 경험'이 아니라 '28년'. '대부분'이 아니라 '10명 중 7명'.</div><div class="pcard-tag">가능한 모든 소재</div></div>
+  <div class="pcard"><div class="pcard-num">P.04</div><div class="pcard-name">당신 지목</div><div class="pcard-en">Direct Pointer</div><div class="pcard-desc">'투자자들은' 대신 '당신은'. 직접 지목이 관여도를 3배 높인다.</div><div class="pcard-tag">전 소재 적용</div></div>
+  <div class="pcard"><div class="pcard-num">P.05</div><div class="pcard-name">반전 구조</div><div class="pcard-en">Reversal Frame</div><div class="pcard-desc">도발형: 공감 → 충격 → 희망. 긍정형: 가능성 → 전문가 → 무료 순으로 전개.</div><div class="pcard-tag">소재별 적용</div></div>
+  <div class="pcard"><div class="pcard-num">P.06</div><div class="pcard-name">구어체</div><div class="pcard-en">Conversational</div><div class="pcard-desc">'~드립니다' 보다 '~해드릴게요'. 가깝고 친근한 전문가 느낌.</div><div class="pcard-tag">전 소재 적용</div></div>
+</div>
 </section>
 
-<!-- ── 02 타겟 ── -->
-<section class="section fade-up in">
-  <div class="section-head">
-    <span class="section-num">02</span>
-    <h2 class="section-title">타겟 오디언스</h2>
-    <div class="section-line"></div>
+<!-- ═══════════════════════════
+     02 타겟 오디언스
+═══════════════════════════ -->
+<section class="sec fi" id="s02" role="region" aria-label="타겟 오디언스">
+<div class="sec-num">02</div>
+<div class="sec-ttl">타겟 오디언스 <span class="sec-badge">3 Segments</span></div>
+<div class="sec-div"></div>
+<div class="tgrid">
+  <div class="tcard">
+    <div class="tcard-seg">SEG 01</div>
+    <div class="tcard-name">40~60대 남성 투자자</div>
+    <ul>
+      <li>자산 5천만원 이상 보유</li>
+      <li>주식 관심 / 투자 경험자</li>
+      <li>Facebook 주요 활동층</li>
+      <li>손실 경험 또는 수익 정체 상태</li>
+    </ul>
   </div>
-  <div class="target-grid">
-    <div class="target-card">
-      <div class="tc-eyebrow">SEGMENT 01</div>
-      <div class="tc-title">40~60대 남성 투자자</div>
-      <ul class="tc-list">
-        <li>자산 5천만원 이상 보유</li>
-        <li>주식 관심 / 투자 경험자</li>
-        <li>Facebook 주요 활동층</li>
-        <li>손실 경험 또는 수익 정체 상태</li>
-      </ul>
-    </div>
-    <div class="target-card">
-      <div class="tc-eyebrow">SEGMENT 02</div>
-      <div class="tc-title">30~50대 직장인 / 자영업자</div>
-      <ul class="tc-list">
-        <li>노후 대비 본격 고민 시작</li>
-        <li>펀드 · ETF 관심자</li>
-        <li>월급 외 수익 구조 탐색 중</li>
-        <li>Instagram 주 활동층</li>
-      </ul>
-    </div>
-    <div class="target-card">
-      <div class="tc-eyebrow">SEGMENT 03</div>
-      <div class="tc-title">리타겟팅 오디언스</div>
-      <ul class="tc-list">
-        <li>웹사이트 방문자</li>
-        <li>경쟁사 투자자문 관심자</li>
-        <li>Lookalike — 기존 상담자 기반</li>
-        <li>결정 망설이는 층</li>
-      </ul>
-    </div>
+  <div class="tcard">
+    <div class="tcard-seg">SEG 02</div>
+    <div class="tcard-name">30~50대 직장인 / 자영업자</div>
+    <ul>
+      <li>노후 대비 본격 고민 시작</li>
+      <li>펀드 · ETF 관심자</li>
+      <li>월급 외 수익 구조 탐색 중</li>
+      <li>Instagram 주 활동층</li>
+    </ul>
   </div>
+  <div class="tcard">
+    <div class="tcard-seg">SEG 03</div>
+    <div class="tcard-name">리타겟팅 오디언스</div>
+    <ul>
+      <li>웹사이트 방문자</li>
+      <li>경쟁사 투자자문 관심자</li>
+      <li>Lookalike — 기존 상담자 기반</li>
+      <li>결정 망설이는 층</li>
+    </ul>
+  </div>
+</div>
 </section>
 
-<!-- ── 03 설득 앵글 ── -->
-<section class="section fade-up">
-  <div class="section-head">
-    <span class="section-num">03</span>
-    <h2 class="section-title">설득 앵글 프레임워크</h2>
-    <div class="section-line"></div>
-  </div>
-  <div class="angle-table">
-    <div class="angle-row angle-head">
-      <div class="angle-cell"><span>No.</span></div>
-      <div class="angle-cell"><span>앵글</span></div>
-      <div class="angle-cell"><span>핵심 메시지 방향</span></div>
-      <div class="angle-cell"><span>적합 타겟</span></div>
-    </div>
-    <div class="angle-row">
-      <div class="angle-cell"><span class="angle-idx">01</span></div>
-      <div class="angle-cell"><span class="tag tag-pain">고통 포인트</span></div>
-      <div class="angle-cell angle-msg">손실·불안·시간 낭비 → 전문가 필요성 자각. <strong>3종만 도발적 헤드라인 사용.</strong></div>
-      <div class="angle-cell angle-tgt">손실 경험자, 40~60대 남성</div>
-    </div>
-    <div class="angle-row">
-      <div class="angle-cell"><span class="angle-idx">02</span></div>
-      <div class="angle-cell"><span class="tag tag-auth">권위 신뢰</span></div>
-      <div class="angle-cell angle-msg">28년 경력, IMF·금융위기 생존, 기관 출신 전문가 → 신뢰 형성</div>
-      <div class="angle-cell angle-tgt">고자산 투자자, 보수적 성향</div>
-    </div>
-    <div class="angle-row">
-      <div class="angle-cell"><span class="angle-idx">03</span></div>
-      <div class="angle-cell"><span class="tag tag-free">무료 혜택</span></div>
-      <div class="angle-cell angle-msg">무료 포트폴리오 분석이라는 제로 리스크 오퍼 → 진입 장벽 최소화</div>
-      <div class="angle-cell angle-tgt">전체 타겟 (리타겟팅 포함)</div>
-    </div>
-    <div class="angle-row">
-      <div class="angle-cell"><span class="angle-idx">04</span></div>
-      <div class="angle-cell"><span class="tag tag-fomo">FOMO</span></div>
-      <div class="angle-cell angle-msg">지금 시장 기회 놓치는 중? 긴박감 → 즉각 행동 유도. <strong>도발 1종 포함.</strong></div>
-      <div class="angle-cell angle-tgt">30~50대 직장인, 트렌드 민감자</div>
-    </div>
-    <div class="angle-row">
-      <div class="angle-cell"><span class="angle-idx">05</span></div>
-      <div class="angle-cell"><span class="tag tag-social">소셜 프루프</span></div>
-      <div class="angle-cell angle-msg">수천 명의 선택, 전문가 검증 → 군중 심리 활용해 신뢰 전환</div>
-      <div class="angle-cell angle-tgt">리타겟팅, 결정 망설이는 층</div>
-    </div>
-  </div>
+<!-- ═══════════════════════════
+     03 설득 앵글
+═══════════════════════════ -->
+<section class="sec fi" id="s03" role="region" aria-label="설득 앵글 프레임워크">
+<div class="sec-num">03</div>
+<div class="sec-ttl">설득 앵글 프레임워크 <span class="sec-badge">5 Angles</span></div>
+<div class="sec-div"></div>
+<table class="angle-tbl">
+<thead><tr><th>No.</th><th>앵글</th><th>핵심 메시지 방향</th><th>적합 타겟</th></tr></thead>
+<tbody>
+<tr><td class="a-no">01</td><td class="a-name">고통 포인트</td><td>손실·불안·시간 낭비 → 전문가 필요성 자각. <strong>3종만 도발적 헤드라인.</strong></td><td>손실 경험자, 40~60대 남성</td></tr>
+<tr><td class="a-no">02</td><td class="a-name">권위 신뢰</td><td>28년 경력, IMF·금융위기 생존, 기관 출신 → 신뢰 형성</td><td>고자산 투자자, 보수적 성향</td></tr>
+<tr><td class="a-no">03</td><td class="a-name">무료 혜택</td><td>무료 포트폴리오 분석 = 제로 리스크 오퍼 → 진입 장벽 최소화</td><td>전체 타겟 (리타겟팅 포함)</td></tr>
+<tr><td class="a-no">04</td><td class="a-name">FOMO</td><td>시장 기회 놓치는 중? 긴박감 → 즉각 행동 유도. <strong>도발 1종 포함.</strong></td><td>30~50대 직장인, 트렌드 민감자</td></tr>
+<tr><td class="a-no">05</td><td class="a-name">소셜 프루프</td><td>수천 명의 선택, 전문가 검증 → 군중 심리 신뢰 전환</td><td>리타겟팅, 결정 망설이는 층</td></tr>
+</tbody>
+</table>
 </section>
 
-<!-- ── 04 소재 12종 ── -->
-<section class="section fade-up">
-  <div class="section-head">
-    <span class="section-num">04</span>
-    <h2 class="section-title">광고 소재 12종 베리에이션</h2>
-    <div class="section-line"></div>
-  </div>
-  <p style="font-size:12px;color:var(--ink4);margin-bottom:24px;font-family:var(--font-mono);letter-spacing:.5px;">
-    🔴 빨간 상단 바 = 도발형 헤드라인 (3종) &nbsp;|&nbsp; 초록 상단 바 = 긍정형 헤드라인 (9종)
-  </p>
+<!-- ═══════════════════════════
+     04 소재 12종
+═══════════════════════════ -->
+<section class="sec fi" id="s04" role="region" aria-label="광고 소재 12종">
+<div class="sec-num">04</div>
+<div class="sec-ttl">광고 소재 12종 베리에이션 <span class="sec-badge">12 Creatives</span></div>
+<div class="sec-div"></div>
 
-  <div class="cards-grid">
+<div class="fbar">
+<span class="fbar-lbl">Filter</span>
+<button class="fb on" onclick="fc('all',this)">전체 12종</button>
+<button class="fb" onclick="fc('pos',this)">✅ 긍정형 9종</button>
+<button class="fb" onclick="fc('atk',this)">🔴 도발형 3종</button>
+<button class="fb" onclick="fc('고통',this)">고통 포인트</button>
+<button class="fb" onclick="fc('권위',this)">권위 신뢰</button>
+<button class="fb" onclick="fc('무료',this)">무료 혜택</button>
+<button class="fb" onclick="fc('FOMO',this)">FOMO</button>
+<button class="fb" onclick="fc('소셜',this)">소셜 프루프</button>
+<span class="fbar-cnt" id="fcnt">12 / 12</span>
+</div>
 
-    <!-- ★ #01 도발형 -->
-    <div class="ad-card" style="--bar-color: var(--red-bar);">
-      <div class="card-head">
-        <div class="card-num">01</div>
-        <div class="card-meta">
-          <span class="tag tag-pain">고통 포인트</span>
-          <span class="card-format">단일 이미지 · 1:1 / 4:5</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 도발형 🔴</div>
-          <div class="copy-hl attack">솔직히 물어볼게요.<br>지금 수익 나고 있어요?</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">대부분의 개인 투자자는 '버티는 중'이거나 '손실 중' 둘 중 하나입니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">BODY COPY</div>
-          <div class="copy-body-txt">근데 이상하지 않나요. 열심히 공부하고, 유튜브 보고, 뉴스 읽는데 왜 계속 마이너스일까요. 문제는 정보가 아닙니다. 전략이 없는 겁니다. 28년 경력 전문가가 지금 당신 포트폴리오를 무료로 봐드립니다.</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">무료로 점검받기 →</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">손실 경험 투자자, 40~60대 남성, 주식 관심사</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> 질문형 헤드라인 그대로 이미지 텍스트에 삽입. 스크롤 정지 효과 극대화.</div>
-    </div>
+<div class="cgrid" id="cgrid">
 
-    <!-- #02 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--green);">
-      <div class="card-head">
-        <div class="card-num">02</div>
-        <div class="card-meta">
-          <span class="tag tag-pain">고통 포인트</span>
-          <span class="card-format">릴스 / 영상 세로형 9:16 · 15~30초</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">주식 3년, 이제는 제대로<br>된 방향으로 가도 됩니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">방법이 틀렸던 겁니다. 그리고 지금부터 바꿀 수 있습니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">영상 구성</div>
-          <div class="copy-body-txt">오프닝 3초: 자막 '3년, 이제 방향을 바꿀 때입니다' 풀화면 → 전문가 등장: '개인 투자자 10명 중 7명은 기준 없이 종목을 고릅니다' → '지금 무료로 전략 점검해 드릴게요' → CTA</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">전략 무료 점검받기</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">30~50대 투자 고민층, Instagram Reels</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> '바꿀 수 있다'는 가능성 프레임. 전문가 카메라 직접 응시 구성 권장.</div>
-    </div>
+<!-- #01 고통 포인트 · 도발형 -->
+<div class="cc" data-t="고통 atk"><div class="cc-ac a"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no a">01</span><span class="cc-ag a">고통 포인트</span><span class="cc-fm">단일 이미지 · 1:1 / 4:5</span><span class="cc-tp a">도발형</span></div><div class="cc-hl a">솔직히 물어볼게요.<br><em>지금 수익 나고 있어요?</em></div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">대부분의 개인 투자자는 '버티는 중'이거나 '손실 중' 둘 중 하나입니다.</div></div><div class="cc-bk"><div class="cc-lb">Body Copy</div><div class="cc-tx">근데 이상하지 않나요. 열심히 공부하고, 유튜브 보고, 뉴스 읽는데 왜 계속 마이너스일까요. 문제는 정보가 아닙니다. 전략이 없는 겁니다. 28년 경력 전문가가 지금 당신 포트폴리오를 무료로 봐드립니다.</div></div></div><div class="cc-ti a">📌 질문형 헤드라인 그대로 이미지 텍스트에 삽입. 스크롤 정지 효과 극대화.</div><div class="cc-ft"><span class="cc-ct a">무료로 점검받기 →</span><span class="cc-tg">손실 경험 투자자 · 40~60대 남성</span></div></div>
 
-    <!-- #03 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--blue-bar);">
-      <div class="card-head">
-        <div class="card-num">03</div>
-        <div class="card-meta">
-          <span class="tag tag-auth">권위 신뢰</span>
-          <span class="card-format">카드뉴스 · 3~5장 슬라이드</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">1997년부터 지금까지.<br>28년을 시장과 함께한 이유가 있습니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">IMF, 금융위기, 코로나. 모든 위기를 실전으로 통과한 경험이 지금 당신 자산을 지킵니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">슬라이드 구성</div>
-          <div class="copy-body-txt">1장: '28년 동안 한 번도 운용을 멈추지 않았습니다' / 2장: IMF(1997) · 닷컴버블(2000) · 금융위기(2008) · 코로나(2020) — 모두 실전으로 통과 / 3장: '살아남은 경험이 다음 기회를 만듭니다' / 4장: 포트폴리오 점검 제안 / 5장: CTA</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">무료 포트폴리오 분석받기</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">45세 이상, 고자산 보수층, 금융 장기 관심자</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> 연도별 위기 타임라인 인포그래픽. '경험이 자산이다' 긍정 프레임.</div>
-    </div>
+<!-- #02 고통 포인트 · 긍정형 -->
+<div class="cc" data-t="고통 pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">02</span><span class="cc-ag p">고통 포인트</span><span class="cc-fm">릴스 · 9:16 · 15~30초</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">주식 3년, 이제는 제대로<br><em>된 방향으로 가도 됩니다.</em></div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">방법이 틀렸던 겁니다. 그리고 지금부터 바꿀 수 있습니다.</div></div><div class="cc-bk"><div class="cc-lb">영상 구성</div><ul class="cc-sc"><li data-n="①">오프닝 3초: '3년, 이제 방향을 바꿀 때입니다' 풀화면</li><li data-n="②">전문가 등장: '10명 중 7명은 기준 없이 종목을 고릅니다'</li><li data-n="③">'지금 무료로 전략 점검해 드릴게요' → CTA</li></ul></div></div><div class="cc-ti">📌 '바꿀 수 있다'는 가능성 프레임. 전문가 카메라 직접 응시 권장.</div><div class="cc-ft"><span class="cc-ct">전략 무료 점검받기 →</span><span class="cc-tg">30~50대 투자 고민층 · Instagram Reels</span></div></div>
 
-    <!-- #04 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--blue-bar);">
-      <div class="card-head">
-        <div class="card-num">04</div>
-        <div class="card-meta">
-          <span class="tag tag-auth">권위 신뢰</span>
-          <span class="card-format">단일 이미지 · FB Feed 1.91:1</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">기관 출신 애널리스트가<br>당신 포트폴리오를 직접 봐드립니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">리서치센터, IPO 전문가, 퀀트 전문가. 보통은 접근조차 못하는 인력이 지금 무료로 함께합니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">BODY COPY</div>
-          <div class="copy-body-txt">증권사 PB는 상품을 팝니다. 저희는 당신 수익을 분석합니다. 이 차이가 결과를 만듭니다. 지금 무료로, 기관 수준의 시각으로 내 포트폴리오를 점검받으세요.</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">기관급 분석 무료 신청</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">금융·투자 관심사, 40~55세 직장인, 자산가</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> 전문가 프로필 + 직함 이미지. '당신을 위해 직접 봐드린다'는 헌신 프레임.</div>
-    </div>
+<!-- #03 권위 신뢰 · 긍정형 -->
+<div class="cc" data-t="권위 pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">03</span><span class="cc-ag p">권위 신뢰</span><span class="cc-fm">카드뉴스 · 3~5장</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">1997년부터 지금까지.<br><em>28년을 시장과 함께한</em> 이유가 있습니다.</div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">IMF, 금융위기, 코로나. 모든 위기를 실전으로 통과한 경험이 지금 당신 자산을 지킵니다.</div></div><div class="cc-bk"><div class="cc-lb">슬라이드 구성</div><ul class="cc-sc"><li data-n="1장">'28년 동안 한 번도 운용을 멈추지 않았습니다'</li><li data-n="2장">IMF(1997) · 닷컴버블(2000) · 금융위기(2008) · 코로나(2020) — 모두 실전 통과</li><li data-n="3장">'살아남은 경험이 다음 기회를 만듭니다'</li><li data-n="4장">포트폴리오 점검 제안</li><li data-n="5장">CTA</li></ul></div></div><div class="cc-ti">📌 연도별 위기 타임라인 인포그래픽. '경험이 자산이다' 긍정 프레임.</div><div class="cc-ft"><span class="cc-ct">무료 포트폴리오 분석받기 →</span><span class="cc-tg">45세 이상 · 고자산 보수층</span></div></div>
 
-    <!-- #05 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--green);">
-      <div class="card-head">
-        <div class="card-num">05</div>
-        <div class="card-meta">
-          <span class="tag tag-free">무료 혜택</span>
-          <span class="card-format">단일 이미지 · 1:1 강조형</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">지금 내 포트폴리오가<br>잘 짜여 있는지, 확인할 수 있습니다.<br>그것도 무료로.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">진짜 무료입니다. 이유요? 한 번 제대로 보여드리면 필요성을 느끼실 거라 생각하거든요.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">BODY COPY</div>
-          <div class="copy-body-txt">포트폴리오 진단은 보통 수십만 원짜리 서비스입니다. 근데 지금은 0원입니다. 부담 없이 신청하세요. 전문가가 직접 연락드립니다.</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">0원 무료 신청하기</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">전체 타겟, Cold + Retargeting, 가격 민감층</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> 이미지에 '₩0' 크게 표기. '솔직한 이유 설명'이 오히려 신뢰 상승.</div>
-    </div>
+<!-- #04 권위 신뢰 · 긍정형 -->
+<div class="cc" data-t="권위 pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">04</span><span class="cc-ag p">권위 신뢰</span><span class="cc-fm">FB Feed 1.91:1</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">기관 출신 애널리스트가<br><em>당신 포트폴리오를 직접</em> 봐드립니다.</div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">리서치센터, IPO 전문가, 퀀트 전문가. 보통은 접근조차 못하는 인력이 지금 무료로 함께합니다.</div></div><div class="cc-bk"><div class="cc-lb">Body Copy</div><div class="cc-tx">증권사 PB는 상품을 팝니다. 저희는 당신 수익을 분석합니다. 이 차이가 결과를 만듭니다.</div></div></div><div class="cc-ti">📌 전문가 프로필 + 직함 이미지. '당신을 위해 직접 봐드린다'는 헌신 프레임.</div><div class="cc-ft"><span class="cc-ct">기관급 분석 무료 신청 →</span><span class="cc-tg">40~55세 직장인 · 자산가</span></div></div>
 
-    <!-- #06 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--green);">
-      <div class="card-head">
-        <div class="card-num">06</div>
-        <div class="card-meta">
-          <span class="tag tag-free">무료 혜택</span>
-          <span class="card-format">릴스 / 영상 · 15초 훅 강화</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">28년 경력 전문가의 포트폴리오 분석,<br>지금은 무료로 받아볼 수 있습니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">비용 없음. 가입 없음. 부담 없음. 신청만 하면 됩니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">영상 구성</div>
-          <div class="copy-body-txt">1초: '무료입니다' 흰 배경 풀텍스트 → 4초: '28년 경력 전문가가' → 8초: '지금 당신 포트폴리오를 직접 분석해드립니다' → 13초: '신청 후 1~2 영업일 내 연락드립니다' → 15초: CTA</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">지금 바로 무료 신청</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">30~50대 직장인, 스킵 패턴 강한 타겟</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> 첫 1초 '무료' 풀텍스트 충격. 15초 내 정보 완결.</div>
-    </div>
+<!-- #05 무료 혜택 · 긍정형 -->
+<div class="cc" data-t="무료 pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">05</span><span class="cc-ag p">무료 혜택</span><span class="cc-fm">단일 이미지 · 1:1 강조형</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">지금 내 포트폴리오가<br>잘 짜여 있는지, 확인할 수 있습니다.<br><em>그것도 무료로.</em></div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">진짜 무료입니다. 이유요? 한 번 제대로 보여드리면 필요성을 느끼실 거라 생각하거든요.</div></div><div class="cc-bk"><div class="cc-lb">Body Copy</div><div class="cc-tx">포트폴리오 진단은 보통 수십만 원짜리 서비스입니다. 근데 지금은 0원입니다. 부담 없이 신청하세요.</div></div></div><div class="cc-ti">📌 이미지에 '₩0' 크게 표기. '솔직한 이유 설명'이 오히려 신뢰 상승.</div><div class="cc-ft"><span class="cc-ct">0원 무료 신청하기 →</span><span class="cc-tg">전체 타겟 · Cold + Retargeting</span></div></div>
 
-    <!-- ★ #07 도발형 -->
-    <div class="ad-card" style="--bar-color: var(--red-bar);">
-      <div class="card-head">
-        <div class="card-num">07</div>
-        <div class="card-meta">
-          <span class="tag tag-fomo">FOMO</span>
-          <span class="card-format">단일 이미지 · 4:5 텍스트 강조형</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 도발형 🔴</div>
-          <div class="copy-hl attack">지금 이 시장에서 손 놓고 있는 사람이랑, 전문가랑 같이 움직이는 사람이랑. 1년 후 결과가 같을 것 같나요?</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">시장 기회는 준비된 사람한테만 보입니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">BODY COPY</div>
-          <div class="copy-body-txt">개인 투자자의 평균 보유 종목 수익률은 코스피 지수보다 낮습니다. 정보가 부족해서가 아닙니다. 전략 없이 움직이기 때문입니다. 지금 전문가와 전략을 점검하세요. 무료입니다.</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">전략 점검 지금 신청</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">30~50대 남성, 주식·코인 관심사, 경제 뉴스 팔로워</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> 비교 대조 비주얼. '준비된 사람 vs 아닌 사람' 프레임.</div>
-    </div>
+<!-- #06 무료 혜택 · 긍정형 -->
+<div class="cc" data-t="무료 pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">06</span><span class="cc-ag p">무료 혜택</span><span class="cc-fm">릴스 · 15초 훅 강화</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">28년 경력 전문가의 포트폴리오 분석,<br><em>지금은 무료로</em> 받아볼 수 있습니다.</div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">비용 없음. 가입 없음. 부담 없음. 신청만 하면 됩니다.</div></div><div class="cc-bk"><div class="cc-lb">영상 구성</div><ul class="cc-sc"><li data-n="①">1초: '무료입니다' 흰 배경 풀텍스트 — 스크롤 스탑</li><li data-n="②">4초: '28년 경력 전문가가'</li><li data-n="③">8초: '지금 당신 포트폴리오를 직접 분석해드립니다'</li><li data-n="④">13초: '1~2 영업일 내 연락드립니다' + CTA</li></ul></div></div><div class="cc-ti">📌 첫 1초 '무료' 풀텍스트 충격. 15초 내 정보 완결.</div><div class="cc-ft"><span class="cc-ct">지금 바로 무료 신청 →</span><span class="cc-tg">30~50대 직장인 · 스킵 패턴 강한 타겟</span></div></div>
 
-    <!-- #08 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--orange-bar);">
-      <div class="card-head">
-        <div class="card-num">08</div>
-        <div class="card-meta">
-          <span class="tag tag-fomo">FOMO</span>
-          <span class="card-format">카드뉴스 · 3장</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">지금 이 시장,<br>제대로 읽으면 기회가 됩니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">전문가들이 지금 시장을 보는 시각, 당신의 포트폴리오에도 적용해드립니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">슬라이드 구성</div>
-          <div class="copy-body-txt">1장: '지금 시장, 기회는 어디에 있을까요?' (시장 흐름 차트 비주얼) / 2장: '전문가들은 이미 이렇게 보고 있습니다' — 핵심 포인트 3가지 / 3장: '당신 포트폴리오도 같은 시각으로 점검받으세요' + CTA</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">지금 무료 점검 신청</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">경제·투자 뉴스 관심층, 45세 이상, 자산 관리 고민층</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> '위기'가 아닌 '기회' 프레임. 시의성 이슈 연동. 매 2~4주 업데이트 필수.</div>
-    </div>
+<!-- #07 FOMO · 도발형 -->
+<div class="cc" data-t="FOMO atk"><div class="cc-ac a"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no a">07</span><span class="cc-ag a">FOMO</span><span class="cc-fm">단일 이미지 · 4:5 텍스트형</span><span class="cc-tp a">도발형</span></div><div class="cc-hl a">지금 이 시장에서 손 놓고 있는 사람이랑,<br>전문가랑 같이 움직이는 사람이랑.<br><em>1년 후 결과가 같을 것 같나요?</em></div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">시장 기회는 준비된 사람한테만 보입니다.</div></div><div class="cc-bk"><div class="cc-lb">Body Copy</div><div class="cc-tx">개인 투자자의 평균 보유 종목 수익률은 코스피 지수보다 낮습니다. 정보가 부족해서가 아닙니다. 전략 없이 움직이기 때문입니다.</div></div></div><div class="cc-ti a">📌 비교 대조 비주얼. '준비된 사람 vs 아닌 사람' 프레임.</div><div class="cc-ft"><span class="cc-ct a">전략 점검 지금 신청 →</span><span class="cc-tg">30~50대 남성 · 주식/코인 관심사</span></div></div>
 
-    <!-- #09 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--purple-bar);">
-      <div class="card-head">
-        <div class="card-num">09</div>
-        <div class="card-meta">
-          <span class="tag tag-social">소셜 프루프</span>
-          <span class="card-format">단일 이미지 · 1:1</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">수천 명이 이미 선택했습니다.<br>한 번 받아보면 이유를 알게 됩니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">28년 동안 개인 투자자부터 기업 자산가까지. 같은 고민을 가진 분들이 이미 먼저 경험했습니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">BODY COPY</div>
-          <div class="copy-body-txt">처음엔 다들 '나한테 맞을까' 고민했습니다. 직접 확인하면 됩니다. 무료니까요.</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">나도 지금 신청하기</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">리타겟팅 오디언스, 결정 망설이는 층, Lookalike</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> '이유를 알게 된다'는 호기심+신뢰 프레임. 신청자 수 수치 크게 표기.</div>
-    </div>
+<!-- #08 FOMO · 긍정형 -->
+<div class="cc" data-t="FOMO pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">08</span><span class="cc-ag p">FOMO</span><span class="cc-fm">카드뉴스 · 3장</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">지금 이 시장,<br><em>제대로 읽으면 기회가 됩니다.</em></div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">전문가들이 지금 시장을 보는 시각, 당신의 포트폴리오에도 적용해드립니다.</div></div><div class="cc-bk"><div class="cc-lb">슬라이드 구성</div><ul class="cc-sc"><li data-n="1장">'지금 시장, 기회는 어디에 있을까요?'</li><li data-n="2장">'전문가들은 이미 이렇게 보고 있습니다' — 핵심 3가지</li><li data-n="3장">'당신 포트폴리오도 같은 시각으로 점검받으세요' + CTA</li></ul></div></div><div class="cc-ti">📌 '위기'가 아닌 '기회' 프레임. 시의성 이슈 연동. 매 2~4주 업데이트.</div><div class="cc-ft"><span class="cc-ct">지금 무료 점검 신청 →</span><span class="cc-tg">경제·투자 뉴스 관심층 · 45세 이상</span></div></div>
 
-    <!-- #10 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--purple-bar);">
-      <div class="card-head">
-        <div class="card-num">10</div>
-        <div class="card-meta">
-          <span class="tag tag-social">소셜 프루프</span>
-          <span class="card-format">릴스 / 영상 · 고객 후기형 30~60초</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">상담 받고 나서 딱 한 가지가 바뀌었습니다.<br>투자를 '감'이 아니라 '기준'으로 보게 됐습니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">처음엔 반신반의했어요. 근데 전문가가 5분 만에 제 포트폴리오 문제를 짚어냈습니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">영상 구성</div>
-          <div class="copy-body-txt">'혼자 3년 했는데 제자리였어요' → '상담 받고 뭐가 달라졌냐고요?' → '전문가가 제 포트폴리오 문제를 5분 만에 짚어냈습니다' → '지금은 기준이 생겼어요' → '저처럼 한 번만 받아보세요, 무료니까'</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">나도 무료 상담 받기</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">손실 경험자, 40~60대, 리타겟팅</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> '감 → 기준' 긍정 전환 스토리가 핵심. 실제 고객 출연 시 효과 최대.</div>
-    </div>
+<!-- #09 소셜 프루프 · 긍정형 -->
+<div class="cc" data-t="소셜 pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">09</span><span class="cc-ag p">소셜 프루프</span><span class="cc-fm">단일 이미지 · 1:1</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">수천 명이 이미 선택했습니다.<br><em>한 번 받아보면 이유를 알게 됩니다.</em></div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">28년 동안 개인 투자자부터 기업 자산가까지. 같은 고민을 가진 분들이 이미 먼저 경험했습니다.</div></div><div class="cc-bk"><div class="cc-lb">Body Copy</div><div class="cc-tx">처음엔 다들 '나한테 맞을까' 고민했습니다. 직접 확인하면 됩니다. 무료니까요.</div></div></div><div class="cc-ti">📌 '이유를 알게 된다'는 호기심+신뢰 프레임. 신청자 수 수치 크게 표기.</div><div class="cc-ft"><span class="cc-ct">나도 지금 신청하기 →</span><span class="cc-tg">리타겟팅 · 결정 망설이는 층</span></div></div>
 
-    <!-- #11 긍정형 -->
-    <div class="ad-card" style="--bar-color: var(--blue-bar);">
-      <div class="card-head">
-        <div class="card-num">11</div>
-        <div class="card-meta">
-          <span class="tag tag-auth">권위 신뢰</span>
-          <span class="card-format">단일 이미지 + 텍스트 오버레이 · FB Feed</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 긍정형 🟢</div>
-          <div class="copy-hl">28년이라는 숫자 뒤에는<br>모든 시장 위기를 버텨낸 경험이 있습니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">IMF, 금융위기, 코로나. 운용을 멈추지 않았던 28년이 지금 당신 자산을 지키는 힘이 됩니다.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">BODY COPY</div>
-          <div class="copy-body-txt">대부분의 투자자문사는 위기 때 문을 닫거나 전략을 바꿉니다. 저희는 28년 동안 한 번도 운용을 멈추지 않았습니다. 이 경험이 지금 당신 자산을 지키는 기반입니다.</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">무료 상담 신청하기</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">50~65세 고자산 보수층, 장기 투자자, 안전 추구형</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> '28'이라는 숫자 이미지 중앙 크게 배치. 경험 = 신뢰 = 안심 긍정 프레임.</div>
-    </div>
+<!-- #10 소셜 프루프 · 긍정형 -->
+<div class="cc" data-t="소셜 pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">10</span><span class="cc-ag p">소셜 프루프</span><span class="cc-fm">릴스 · 고객 후기형 30~60초</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">상담 받고 나서 딱 한 가지가 바뀌었습니다.<br>투자를 '감'이 아니라 <em>'기준'으로 보게 됐습니다.</em></div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">처음엔 반신반의했어요. 근데 전문가가 5분 만에 제 포트폴리오 문제를 짚어냈습니다.</div></div><div class="cc-bk"><div class="cc-lb">영상 구성</div><ul class="cc-sc"><li data-n="①">'혼자 3년 했는데 제자리였어요'</li><li data-n="②">'상담 받고 뭐가 달라졌냐고요?'</li><li data-n="③">'전문가가 5분 만에 문제를 짚어냈습니다'</li><li data-n="④">'저처럼 한 번만 받아보세요, 무료니까' + CTA</li></ul></div></div><div class="cc-ti">📌 '감 → 기준' 긍정 전환 스토리. 실제 고객 출연 시 효과 최대.</div><div class="cc-ft"><span class="cc-ct">나도 무료 상담 받기 →</span><span class="cc-tg">손실 경험자 · 40~60대 · 리타겟팅</span></div></div>
 
-    <!-- ★ #12 도발형 -->
-    <div class="ad-card" style="--bar-color: var(--red-bar);">
-      <div class="card-head">
-        <div class="card-num">12</div>
-        <div class="card-meta">
-          <span class="tag tag-pain">고통 포인트</span>
-          <span class="card-format">카드뉴스 · 4장 체크리스트형</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="copy-block">
-          <div class="copy-lbl">HEADLINE — 도발형 🔴</div>
-          <div class="copy-hl attack">이 4가지 중 하나라도 해당되면,<br>지금 당장 포트폴리오 점검이 필요합니다.</div>
-        </div>
-        <div class="copy-divider"></div>
-        <div class="copy-block">
-          <div class="copy-lbl">SUB COPY</div>
-          <div class="copy-sub">해당 안 되면 다행입니다. 해당 된다면, 더 늦기 전에 확인하세요.</div>
-        </div>
-        <div class="copy-block">
-          <div class="copy-lbl">슬라이드 구성</div>
-          <div class="copy-body-txt">1장: '올해 수익률이 코스피보다 낮다' ☑ / 2장: '지금 내 포트폴리오를 설명하기 어렵다' ☑ / 3장: '손절 기준이 없어서 버티다 더 잃었다' ☑ / 4장: '하나라도 체크됐다면? 무료 전문가 상담을 받아보세요. 지금 당장.' + CTA</div>
-        </div>
-      </div>
-      <div class="card-foot">
-        <div class="foot-col">
-          <div class="foot-lbl">CTA</div>
-          <div class="foot-cta">지금 무료 점검 신청</div>
-        </div>
-        <div class="foot-col">
-          <div class="foot-lbl">TARGET</div>
-          <div class="foot-tgt">전체 타겟, 자가 진단 유도형, 참여율 높은 포맷</div>
-        </div>
-      </div>
-      <div class="card-note"><strong>📌</strong> 체크박스 비주얼 필수. 자기 해당 여부 확인 과정이 자연스러운 관여도 상승.</div>
-    </div>
+<!-- #11 권위 신뢰 · 긍정형 -->
+<div class="cc" data-t="권위 pos"><div class="cc-ac p"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no">11</span><span class="cc-ag p">권위 신뢰</span><span class="cc-fm">단일 이미지 + 텍스트 오버레이</span><span class="cc-tp p">긍정형</span></div><div class="cc-hl">28년이라는 숫자 뒤에는<br><em>모든 시장 위기를 버텨낸</em> 경험이 있습니다.</div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">IMF, 금융위기, 코로나. 운용을 멈추지 않았던 28년이 지금 당신 자산을 지키는 힘이 됩니다.</div></div><div class="cc-bk"><div class="cc-lb">Body Copy</div><div class="cc-tx">대부분의 투자자문사는 위기 때 문을 닫거나 전략을 바꿉니다. 저희는 28년 동안 한 번도 운용을 멈추지 않았습니다.</div></div></div><div class="cc-ti">📌 '28' 숫자 이미지 중앙 크게 배치. 경험 = 신뢰 = 안심 긍정 프레임.</div><div class="cc-ft"><span class="cc-ct">무료 상담 신청하기 →</span><span class="cc-tg">50~65세 고자산 보수층 · 장기 투자자</span></div></div>
 
-  </div><!-- /cards-grid -->
+<!-- #12 고통 포인트 · 도발형 -->
+<div class="cc" data-t="고통 atk"><div class="cc-ac a"></div><div class="cc-bd"><div class="cc-mt"><span class="cc-no a">12</span><span class="cc-ag a">고통 포인트</span><span class="cc-fm">카드뉴스 · 4장 체크리스트</span><span class="cc-tp a">도발형</span></div><div class="cc-hl a">이 4가지 중 하나라도 해당되면,<br><em>지금 당장 포트폴리오 점검이 필요합니다.</em></div><div class="cc-bk"><div class="cc-lb">Sub Copy</div><div class="cc-tx">해당 안 되면 다행입니다. 해당 된다면, 더 늦기 전에 확인하세요.</div></div><div class="cc-bk"><div class="cc-lb">슬라이드 구성</div><ul class="cc-sc"><li data-n="1장">'올해 수익률이 코스피보다 낮다' ☑</li><li data-n="2장">'지금 내 포트폴리오를 설명하기 어렵다' ☑</li><li data-n="3장">'손절 기준이 없어서 버티다 더 잃었다' ☑</li><li data-n="4장">'하나라도 체크됐다면? 무료 전문가 상담을 받아보세요.' + CTA</li></ul></div></div><div class="cc-ti a">📌 체크박스 비주얼 필수. 자기 해당 여부 확인이 자연스러운 관여도 상승.</div><div class="cc-ft"><span class="cc-ct a">지금 무료 점검 신청 →</span><span class="cc-tg">전체 타겟 · 자가 진단 유도형</span></div></div>
+
+</div>
 </section>
 
-<!-- ── 05 우선순위 ── -->
-<section class="section fade-up">
-  <div class="section-head">
-    <span class="section-num">05</span>
-    <h2 class="section-title">Phase 1 런칭 우선 소재</h2>
-    <div class="section-line"></div>
-  </div>
-  <p style="font-size:12px;color:var(--ink4);font-family:var(--font-mono);letter-spacing:.5px;margin-bottom:28px;">
-    첫 2주 균등 집행 → CTR/CVR 기반 예산 재분배
-  </p>
-  <div class="priority-table">
-    <div class="p-row p-head">
-      <div class="p-cell">#</div>
-      <div class="p-cell">앵글</div>
-      <div class="p-cell">핵심 훅</div>
-      <div class="p-cell">예상 강점</div>
-    </div>
-    <div class="p-row">
-      <div class="p-cell"><span class="p-num">01</span></div>
-      <div class="p-cell"><span class="tag tag-pain">고통 포인트</span></div>
-      <div class="p-cell p-hook">솔직히 물어볼게요. 지금 수익 나고 있어요?</div>
-      <div class="p-cell p-str">높은 공감 CTR</div>
-    </div>
-    <div class="p-row">
-      <div class="p-cell"><span class="p-num">05</span></div>
-      <div class="p-cell"><span class="tag tag-free">무료 혜택</span></div>
-      <div class="p-cell p-hook">지금 내 포트폴리오가 잘 짜여 있는지, 무료로 확인할 수 있습니다.</div>
-      <div class="p-cell p-str">낮은 진입 장벽 CVR</div>
-    </div>
-    <div class="p-row">
-      <div class="p-cell"><span class="p-num">07</span></div>
-      <div class="p-cell"><span class="tag tag-fomo">FOMO</span></div>
-      <div class="p-cell p-hook">1년 후 결과가 같을 것 같나요?</div>
-      <div class="p-cell p-str">즉각 행동 유발</div>
-    </div>
-    <div class="p-row">
-      <div class="p-cell"><span class="p-num">12</span></div>
-      <div class="p-cell"><span class="tag tag-pain">고통 포인트</span></div>
-      <div class="p-cell p-hook">4가지 중 하나라도 해당되면 지금 당장.</div>
-      <div class="p-cell p-str">높은 참여·공유율</div>
-    </div>
-  </div>
+<!-- ═══════════════════════════
+     05 Phase 1
+═══════════════════════════ -->
+<section class="sec fi" id="s05" role="region" aria-label="Phase 1 런칭 우선 소재">
+<div class="sec-num">05</div>
+<div class="sec-ttl">Phase 1 런칭 우선 소재 <span class="sec-badge">4 Creatives</span></div>
+<div class="sec-div"></div>
+<p class="ph-nt">첫 2주 <strong>균등 집행</strong> → CTR/CVR 기반 예산 재분배. 도발형 1종 + 긍정형 3종.</p>
+<div class="ph-grid">
+  <div class="ph-cd"><div class="ph-nm a">#01</div><div><div class="ph-ag">고통 포인트 · 도발형</div><div class="ph-hk">솔직히 물어볼게요. 지금 수익 나고 있어요?</div><div class="ph-st a">예상 강점 — 높은 공감 CTR</div></div></div>
+  <div class="ph-cd"><div class="ph-nm">#05</div><div><div class="ph-ag">무료 혜택 · 긍정형</div><div class="ph-hk">지금 내 포트폴리오가 잘 짜여 있는지, 무료로 확인할 수 있습니다.</div><div class="ph-st">예상 강점 — 낮은 진입 장벽 CVR</div></div></div>
+  <div class="ph-cd"><div class="ph-nm">#07</div><div><div class="ph-ag">FOMO · 도발형</div><div class="ph-hk">1년 후 결과가 같을 것 같나요?</div><div class="ph-st a">예상 강점 — 즉각 행동 유발</div></div></div>
+  <div class="ph-cd"><div class="ph-nm a">#12</div><div><div class="ph-ag">고통 포인트 · 도발형</div><div class="ph-hk">4가지 중 하나라도 해당되면 지금 당장.</div><div class="ph-st a">예상 강점 — 높은 참여·공유율</div></div></div>
+</div>
 </section>
 
-<!-- ── 06 교훈 & 다음 작업 ── -->
-<section class="section fade-up">
-  <div class="section-head">
-    <span class="section-num">06</span>
-    <h2 class="section-title">작업 교훈 &amp; 다음 작업 제안</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="lesson-box">
-    <div class="lesson-lbl">// LESSON LEARNED</div>
-    <p class="lesson-txt">
-      광고 카피에서 '도발형'과 '긍정형'은 타겟 세그먼트에 따라 효율이 갈립니다. 도발형(#01, #07, #12)은 <strong>손실 경험이 있거나 불만이 쌓인 Cold 타겟</strong>에 유효하고, 긍정형(나머지 9종)은 <strong>브랜드 인지가 어느 정도 형성된 Warm/Retargeting 타겟</strong>에 더 높은 CVR을 냅니다. 초기에는 둘 다 집행 후 세그먼트별 성과를 비교하는 것이 정석입니다.
-    </p>
-  </div>
-
-  <div class="steps-grid">
-    <div class="step-card">
-      <div class="step-n">①</div>
-      <div class="step-content">
-        <div class="step-title">디자인 시안 제작</div>
-        <div class="step-desc">우선순위 4종 (#01, #05, #07, #12) Canva 시안 제작. 열일곱 브랜드 컬러(흰·검·초록) 기반 템플릿 적용. 헤드라인 카피 이미지 직접 삽입.</div>
-      </div>
-    </div>
-    <div class="step-card">
-      <div class="step-n">②</div>
-      <div class="step-content">
-        <div class="step-title">도발형 vs 긍정형 A/B 테스트</div>
-        <div class="step-desc">동일 앵글 내 헤드라인 2개 버전 동시 집행. Cold 타겟 → 도발형, Retargeting → 긍정형 가설 검증.</div>
-      </div>
-    </div>
-    <div class="step-card">
-      <div class="step-n">③</div>
-      <div class="step-content">
-        <div class="step-title">META Lead Form 설계</div>
-        <div class="step-desc">이름+전화번호 2필드 버전 vs 투자규모 선택 추가 3필드 버전 CVR 비교. 질문 최소화가 신청률 핵심.</div>
-      </div>
-    </div>
-    <div class="step-card">
-      <div class="step-n">④</div>
-      <div class="step-content">
-        <div class="step-title">영상 소재 스크립트 완성</div>
-        <div class="step-desc">소재 #02, #06, #10 촬영 콘티 + 자막 시안 패키지 제작. 전문가 직접 출연 시 신뢰도 최대.</div>
-      </div>
-    </div>
-    <div class="step-card">
-      <div class="step-n">⑤</div>
-      <div class="step-content">
-        <div class="step-title">랜딩페이지 메시지 매칭</div>
-        <div class="step-desc">광고 헤드라인 ↔ 랜딩 히어로 카피 일치. 메시지 단절은 이탈률 급등 원인 1위.</div>
-      </div>
-    </div>
-  </div>
+<!-- ═══════════════════════════
+     06 교훈 & 다음 작업
+═══════════════════════════ -->
+<section class="sec fi" id="s06" role="region" aria-label="작업 교훈 및 다음 작업">
+<div class="sec-num">06</div>
+<div class="sec-ttl">작업 교훈 &amp; 다음 작업 제안 <span class="sec-badge">Lesson + Next</span></div>
+<div class="sec-div"></div>
+<div class="ls-box">
+<div class="ls-lb">// Lesson Learned</div>
+<div class="ls-tx">광고 카피에서 <strong>도발형과 긍정형은 타겟 세그먼트에 따라 효율이 갈립니다.</strong> 도발형(#01, #07, #12)은 <em>손실 경험이 있거나 불만이 쌓인 Cold 타겟</em>에 유효하고, 긍정형(나머지 9종)은 <em>브랜드 인지가 어느 정도 형성된 Warm/Retargeting 타겟</em>에 더 높은 CVR을 냅니다. <strong>초기에는 둘 다 집행 후 세그먼트별 성과를 비교하는 것이 정석.</strong></div>
+</div>
+<div class="nx-grid">
+  <div class="nx-cd"><span class="nx-i">①</span><div><div class="nx-t">디자인 시안 제작</div><div class="nx-d">우선순위 4종 (#01, #05, #07, #12) Canva 시안. 열일곱 브랜드 컬러(흰·검·초록) 기반 템플릿 적용.</div></div></div>
+  <div class="nx-cd"><span class="nx-i">②</span><div><div class="nx-t">도발형 vs 긍정형 A/B 테스트</div><div class="nx-d">동일 앵글 내 2개 버전 동시 집행. Cold → 도발, Retargeting → 긍정 가설 검증.</div></div></div>
+  <div class="nx-cd"><span class="nx-i">③</span><div><div class="nx-t">META Lead Form 설계</div><div class="nx-d">이름+전화번호 2필드 vs 투자규모 추가 3필드 CVR 비교. 질문 최소화가 신청률 핵심.</div></div></div>
+  <div class="nx-cd"><span class="nx-i">④</span><div><div class="nx-t">영상 소재 스크립트 완성</div><div class="nx-d">#02, #06, #10 촬영 콘티 + 자막 시안 패키지. 전문가 직접 출연 시 신뢰도 최대.</div></div></div>
+  <div class="nx-cd"><span class="nx-i">⑤</span><div><div class="nx-t">랜딩페이지 메시지 매칭</div><div class="nx-d">광고 헤드라인 ↔ 랜딩 히어로 카피 일치. 메시지 단절은 이탈률 급등 원인 1위.</div></div></div>
+</div>
 </section>
+</main>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">
-    <div class="footer-name">열일<span>곱</span>하기</div>
-    <div class="footer-tagline">101OUTPOST · BUSINESS × MARKETING</div>
+<!-- ══ FOOTER ══ -->
+<footer role="contentinfo">
+  <div>
+    <div class="ft-brand">열일<span>곱</span>하기</div>
+    <div class="ft-tag">101OUTPOST · BUSINESS × MARKETING</div>
   </div>
-  <div class="footer-info">
-    유니베스트투자자문 META 광고 소재 기획안<br>
-    v2.0 · 열일곱 스타일 카피 · 2026.03
-  </div>
+  <div class="ft-info">유니베스트투자자문 META 광고 소재 기획안<br>v2.0 · 열일곱 스타일 카피 · 2026.03</div>
 </footer>
 
 <script>
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.06 });
-document.querySelectorAll('.fade-up').forEach(el => {
-  const r = el.getBoundingClientRect();
-  if (r.top < window.innerHeight) el.classList.add('in');
-  else io.observe(el);
-});
+/* ── Fade-in ── */
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.06});
+document.querySelectorAll('.fi').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight)el.classList.add('in');else io.observe(el)});
+
+/* ── Scroll spy for section nav ── */
+const snavLinks=document.querySelectorAll('.snav a');
+const sections=document.querySelectorAll('.sec[id]');
+const heroEl=document.querySelector('.hero');
+function updateActive(){
+  let current='';
+  const scrollY=window.scrollY+140;
+  sections.forEach(s=>{if(scrollY>=s.offsetTop)current=s.id});
+  snavLinks.forEach(a=>{
+    a.classList.toggle('active',a.getAttribute('href')==='#'+current);
+  });
+}
+window.addEventListener('scroll',updateActive,{passive:true});
+updateActive();
+
+/* ── Filter ── */
+function fc(tag,btn){
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  const cards=document.querySelectorAll('.cc');
+  let cnt=0;
+  cards.forEach(c=>{
+    const d=c.dataset.t;
+    const show=tag==='all'||d.includes(tag);
+    c.style.display=show?'':'none';
+    if(show)cnt++;
+  });
+  document.getElementById('fcnt').textContent=cnt+' / 12';
+}
 </script>
 
-
-
-<a id="bottomBar" style="position: fixed; bottom: -40px; left: 0px; z-index: 9999; transform: translateX(-50%); background-color: transparent; border-radius: 5px 5px 0px 0px; opacity: 0.3; padding: 5px; transition: 0.3s; cursor: pointer; max-height: 100px; max-width: 45px;"><img src="chrome-extension://kobncfkmjelbefaoohoblamnbackjggk/icon/icon_32.png" style="width: 32px; height: 32px;"></a></body><whale-quicksearch translate="no" style="visibility: visible;"></whale-quicksearch></html>
+</body>
+</html>
